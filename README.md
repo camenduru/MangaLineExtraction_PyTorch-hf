@@ -1,10 +1,10 @@
 ---
-title: MangaLineExtraction PyTorch
+title: MangaLineExtraction_PyTorch
 emoji: 📈
 colorFrom: green
 colorTo: indigo
 sdk: gradio
-sdk_version: 3.0.14
+sdk_version: 3.0.11
 app_file: app.py
 pinned: false
 ---

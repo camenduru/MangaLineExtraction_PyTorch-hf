@@ -1,0 +1,3 @@
+[submodule "MangaLineExtraction_PyTorch"]
+	path = MangaLineExtraction_PyTorch
+	url = https://github.com/ljsabc/MangaLineExtraction_PyTorch
