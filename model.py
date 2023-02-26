@@ -16,14 +16,15 @@ sys.path.insert(0, submodule_dir.as_posix())
 
 from model_torch import res_skip
 
-HF_TOKEN = os.environ['HF_TOKEN']
+HF_TOKEN = os.getenv('HF_TOKEN')
 
 MAX_SIZE = 1000
 
 
 class Model:
-    def __init__(self, device: str | torch.device):
-        self.device = torch.device(device)
+    def __init__(self):
+        self.device = torch.device(
+            'cuda:0' if torch.cuda.is_available() else 'cpu')
         self.model = self._load_model()
 
     def _load_model(self) -> nn.Module:
