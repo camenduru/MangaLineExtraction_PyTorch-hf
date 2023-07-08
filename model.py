@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import os
 import pathlib
 import sys
 
@@ -16,8 +15,6 @@ sys.path.insert(0, submodule_dir.as_posix())
 
 from model_torch import res_skip
 
-HF_TOKEN = os.getenv('HF_TOKEN')
-
 MAX_SIZE = 1000
 
 
@@ -29,9 +26,7 @@ class Model:
 
     def _load_model(self) -> nn.Module:
         ckpt_path = huggingface_hub.hf_hub_download(
-            'hysts/MangaLineExtraction_PyTorch',
-            'erika.pth',
-            use_auth_token=HF_TOKEN)
+            'public-data/MangaLineExtraction_PyTorch', 'erika.pth')
         state_dict = torch.load(ckpt_path)
         model = res_skip()
         model.load_state_dict(state_dict)
